@@ -3,9 +3,12 @@
 #include <time.h>
 
 using namespace std;
-int main () {
 int dealer = 0;
 int player = 0;
+
+
+int main () {
+
 char cont;
 
 
@@ -55,10 +58,14 @@ if (cont == 's')
 		
 		if (dealer <= 16)
 		{
+			do
+			{
 			int card3 = rand() % 10+1;
 			dealer = card3 + dealer;
 			cout << "dealer hits" << endl;
 			cout << "dealer has " << dealer << endl;
+			}
+			while (dealer <= 16);
 			
 			if (dealer >= 22)
 			{
@@ -67,7 +74,7 @@ if (cont == 's')
 				cont = 'n';
 			}
 			
-			else if (dealer >= player)
+			else if (dealer>=player)
 				{
 					cout << "dealer wins" << endl;
 					cont = 'n';
@@ -94,7 +101,7 @@ if (cont == 's')
 			{
 				cout << "dealer sticks" << endl;
 				
-				if (dealer >= player)
+				if (dealer>=player)
 				{
 					cout << "dealer wins" << endl;
 					cont = 'n';
@@ -114,3 +121,4 @@ if (cont == 's')
 
 return 0;
 }
+
